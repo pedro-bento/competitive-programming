@@ -2,9 +2,10 @@
   
   **Competitive Programming Standard File**
 
-  v0.0.3 - Add FAST_IO, Float Types, FOR, std namespace, Includes.  
-  v0.0.2 - Add Integer Types.
-  v0.0.1 - Add Graph Struct. 
+  v0.0.4 - Print.
+  v0.0.3 - FAST_IO, Float Types, FOR, std namespace, Includes.  
+  v0.0.2 - Integer Types.
+  v0.0.1 - Graph Struct. 
 
   @Pedro Bento - 18/8/2020
 
@@ -15,6 +16,7 @@
 #include <iostream>
 #include <string>
 #include <algorithm>
+#include <utility>
 #include <vector>
 #include <queue>
 #include <deque>
@@ -29,9 +31,9 @@ using namespace std;
 
 /* Macros. */
 
-#define FAST_IO std::ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
+#define FAST_IO std::ios_base::sync_with_stdio(false); std::cin.tie(NULL); std::cout.tie(NULL);
 
-#define FOR(i,a,b) for (u32 i = a; i < b; i++)
+#define FOR(i,a,b) for (u32 i = (a); i < (b); i++)
 
 /* Integer And Float Types. */
 
@@ -114,6 +116,27 @@ public:
     return data.at(n);
   }
 };
+
+/* Print. */
+
+template <typename T>
+void __printc(const T& c)
+{
+  for(const auto& x : c)
+  {
+    cout << x << " ";
+  }
+}
+
+template <typename T>
+void print(const vector<T> &c) { __printc(c); }
+
+template <typename T>
+void print(const list<T> &c) { __printc(c); }
+
+template <typename T>
+void print(const set<T> &c) { __printc(c); }
+
 
 /*  *** MAIN ***  */
 

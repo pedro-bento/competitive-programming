@@ -2,6 +2,7 @@
   
   **Competitive Programming Standard File**
 
+  v0.0.5 - as_path_bfs, FORE, println.
   v0.0.4 - Print.
   v0.0.3 - FAST_IO, Float Types, FOR, std namespace, Includes.  
   v0.0.2 - Integer Types.
@@ -33,7 +34,8 @@ using namespace std;
 
 #define FAST_IO std::ios_base::sync_with_stdio(false); std::cin.tie(NULL); std::cout.tie(NULL);
 
-#define FOR(i,a,b) for (u32 i = (a); i < (b); i++)
+#define FOR(i,a,b) for (size_t i = (a); i < (b); i++) // incr for 
+#define FORE(x,xs) for(const auto& x : xs)  // for_each
 
 /* Integer And Float Types. */
 
@@ -106,7 +108,7 @@ public:
     insert_arc(n, m, a);
   }
 
-  const A& arc_at(const N &n, const N &m)
+  const A& arc_at(const N &n, const N &m) const
   {
     return data[n][m];
   }
@@ -115,6 +117,26 @@ public:
   {
     return data.at(n);
   }
+
+  template <size_t VSIZE>
+  bool as_path_bfs(N s, N t, array<bool, VSIZE> &v) const
+  {
+    if (s == t)
+      return true;
+    if (v[s])
+      return false;
+
+    v[s] = true;
+
+    FORE(m, node_neighbours(s))
+    {
+      if (!v[m.first])
+        if (as_path_bfs(m.first, t, v))
+          return true;
+    }
+
+    return false;
+  }
 };
 
 /* Print. */
@@ -122,7 +144,7 @@ public:
 template <typename T>
 void __printc(const T& c)
 {
-  for(const auto& x : c)
+  FORE(x,c)
   {
     cout << x << " ";
   }
@@ -137,6 +159,11 @@ void print(const list<T> &c) { __printc(c); }
 template <typename T>
 void print(const set<T> &c) { __printc(c); }
 
+template <typename T>
+void print(const T &x) { cout << x; }
+
+template <typename T>
+void println(const T &x) { print(x); cout << endl; }
 
 /*  *** MAIN ***  */
 

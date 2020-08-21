@@ -1,12 +1,5 @@
-/*
-
-  **Competitive Programming Standard File**
-
-  v1.0.0
-
-  @Pedro Bento - 18/8/2020
-
-*/
+/*   Competitive Programming Standard File   */
+/*     v1.0.0 - @Pedro Bento - 18/8/2020     */
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -32,20 +25,13 @@ typedef vector<ll> vl;
 #define PER(i,b) ROF(i,0,b)
 #define TRAV(x,xs) for (const auto& x : xs)
 
-#define FAST_IO std::ios_base::sync_with_stdio(false); std::cin.tie(NULL); std::cout.tie(NULL);
+#define FAST_IO\
+  std::ios_base::sync_with_stdio(false);\
+  std::cin.tie(NULL); std::cout.tie(NULL);
 #define endl "\n"
 
-template <typename T>
-void __printc(const T& c) { TRAV(x,c) cout << x << " "; }
-
-template <typename T>
-void print(const vector<T> &c) { __printc(c); }
-
-template <typename T>
-void print(const list<T> &c) { __printc(c); }
-
-template <typename T>
-void print(const set<T> &c) { __printc(c); }
+template <typename I>
+void print(I it, I end) { while(it != end) { cout << *it++ << " "; } }
 
 template <typename T>
 void print(const T &x) { cout << x; }
@@ -53,10 +39,15 @@ void print(const T &x) { cout << x; }
 template <typename T>
 void println(const T &x) { print(x); cout << endl; }
 
+template <typename I>
+void println(I it, I end) { print(it,end); cout << endl; }
+
 /*  *** MAIN ***  */
 
 void test_case() {
-
+  // Example.
+  vi v {0,1,2,3,4,5,6,7,8,9};
+  println(all(v));
 }
 
 int main(void) {
@@ -70,6 +61,5 @@ int main(void) {
   }
 
   flush(cout);
-
   return EXIT_SUCCESS;
 }

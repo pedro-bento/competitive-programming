@@ -1,3 +1,3 @@
-# Competitive-Programming
+# competitive-programming
 
-A c++ file template for competitive programming. 
+c++ competitive programming template. 

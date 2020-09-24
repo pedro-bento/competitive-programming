@@ -17,22 +17,13 @@ typedef unsigned long long ull;
   std::cin.tie(NULL); std::cout.tie(NULL);
 #define endl "\n"
 
+const ll N = 10e6;
+
 /*  *** MAIN ***  */
-
-void test_case() {
-
-}
 
 int main(void) {
   FAST_IO;
 
-  int t = 1;
-  // cin >> t; /* uncomment if problem has test cases */
-
-  while(t-- > 0) {
-    test_case();
-  }
-
-  flush(cout);
+  std::flush(cout);
   return EXIT_SUCCESS;
 }

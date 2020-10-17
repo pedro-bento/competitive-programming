@@ -1,14 +1,13 @@
 executable = main
 
-cpp = ./cpp/main.cpp 
-go = ./go/main.go 
-haskell = ./haskell/main.hs 
+in = ./io/in.txt
+out = ./io/out.txt
 
-cpp: $(cpp)
-	g++ -o $(executable) -Wall $(cpp) && ./main < in.txt > out.txt && rm ./main
+default = ./src/default.cpp
+st = ./src/segment_tree.cpp
 
-go: $(go)
-	go build $(go) && ./main < in.txt > out.txt && rm ./main
+default: $(default)
+	g++ -o $(executable) -Wall $(default) && ./main < $(in) > $(out) && rm ./main
 
-haskell: $(haskell)
-	ghc $(haskell) && rm ./haskell/main.o && rm ./haskell/main.hi && ./haskell/main < in.txt > out.txt && rm ./haskell/main
+st: $(st)
+	g++ -o $(executable) -Wall $(st) && ./main < $(in) > $(out) && rm ./main

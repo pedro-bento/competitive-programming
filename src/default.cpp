@@ -9,19 +9,19 @@ using namespace std;
 typedef long long ll;
 typedef unsigned long long ull;
 
-#define FOR(i,a,b)  for (ll i = (a); i < (b); ++i)
-#define FORI(i,a,b) for (ll i = (a); i <= (b); ++i)
-#define TRAV(x,xs)  for (const auto& x : xs)
-#define all(x)      (x).begin(), (x).end()
-#define clr(x)      memset((x), 0, sizeof((x)));
+#define FOR(i, a, b) for (ll i = (a); i < (b); ++i)
+#define FORI(i, a, b) for (ll i = (a); i <= (b); ++i)
+#define TRAV(x, xs) for (const auto& x : xs)
+#define all(x) (x).begin(), (x).end()
+#define clr(x) memset((x), 0, sizeof((x)));
 
-#define FAST_IO std::ios_base::sync_with_stdio(false); std::cin.tie(NULL);
-#define endl    "\n"
+#define FAST_IO                          \
+  std::ios_base::sync_with_stdio(false); \
+  std::cin.tie(NULL);
+#define endl "\n"
 
 /*  *** MAIN ***  */
-void test_case() {
-  
-}
+void test_case() {}
 
 int main(void) {
   FAST_IO;

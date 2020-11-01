@@ -26,7 +26,6 @@ typedef unsigned long long ull;
 
 #define N 200005
 #define NEUTRAL 0
-
 ll n;
 ll v[N];
 ll st[N * 4];

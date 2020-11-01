@@ -24,8 +24,30 @@ typedef unsigned long long ull;
   std::cin.tie(NULL);
 #define endl "\n"
 
+/*          (0-1) Kanapsack         */
+/*            @Pedro Bento          */
+/*         v1.0.0 - 01/11/2020      */
+
+#define N 1000
+ll n = 0, w = 0;
+ll weight[N] = {};
+ll value[N] = {};
+
+ll knapsack() {
+  ll dp[w + 1] = {};
+  FOR(i, 0, n) {
+    RFORI(j, w, weight[i]) {
+      dp[j] = max(dp[j], dp[j - weight[i]] + value[i]);
+    }
+  }
+  return dp[w];
+}
+
 /*  *** MAIN ***  */
-void test_case() {}
+void test_case() {
+  clr(weight);
+  clr(value);
+}
 
 int main(void) {
   FAST_IO;

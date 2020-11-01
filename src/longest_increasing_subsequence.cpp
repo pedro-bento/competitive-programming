@@ -2,7 +2,6 @@
 /*                @Pedro Bento               */
 /*             v1.0.0 - 18/08/2020           */
 /*             v1.0.1 - 25/10/2020           */
-/*             v1.0.2 - 01/11/2020           */
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -12,10 +11,7 @@ typedef unsigned long long ull;
 
 #define FOR(i, a, b) for (ll i = (a); i < (b); ++i)
 #define FORI(i, a, b) for (ll i = (a); i <= (b); ++i)
-#define RFOR(i, a, b) for (ll i = (a); i > (b); --i)
-#define RFORI(i, a, b) for (ll i = (a); i >= (b); --i)
 #define TRAV(x, xs) for (const auto& x : xs)
-#define RTRAV(x, xs) for (auto x = xs.rbegin(); x != xs.rend(); ++x)
 #define all(x) (x).begin(), (x).end()
 #define clr(x) memset((x), 0, sizeof((x)));
 
@@ -24,8 +20,32 @@ typedef unsigned long long ull;
   std::cin.tie(NULL);
 #define endl "\n"
 
+/*  Longest Increasing Subsequence  */
+/*            @Pedro Bento          */
+/*         v1.0.0 - 31/10/2020      */
+
+#define N 10000
+ll n;
+ll arr[N];
+
+ll LIS() {
+  vector<int> dp;
+  FOR(i, 0, n) {
+    auto it = lower_bound(dp.begin(), dp.end(), arr[i]);
+    if (it == dp.end())
+      dp.push_back(arr[i]);
+    else
+      *it = arr[i];
+  }
+
+  return dp.size();
+}
+
 /*  *** MAIN ***  */
-void test_case() {}
+
+void test_case() {
+  // CODE HERE
+}
 
 int main(void) {
   FAST_IO;
